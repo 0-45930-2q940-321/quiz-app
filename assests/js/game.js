@@ -85,6 +85,13 @@ function getNextQuestion() {
     chooseAnswer = true
 }
 
+
+
+
+
+
+
+
 function checkAnswers() {
     //Each choice in the array will display
     choiceText.forEach(choice => {
