@@ -20,6 +20,15 @@ body {
     border: 1px solid #fff;
     margin-bottom: 30px;
     font-size: 30px;
+    cursor: pointer;
+}
+.choice-text{
+    background-color: red;
+    width: 75%;
+    text-align: center;
+}
+.choices-abcd:hover{
+    background: #1b1b1b;
 }
 
 .c2 .c3 .c4 {
