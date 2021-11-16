@@ -1,0 +1,27 @@
+body {
+    background: black;
+}
+
+.game-page {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+    display: flexbox;
+    justify-content: space-between;
+}
+
+.choices-abcd {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative; top: 10px;
+    border: 1px solid #fff;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.c2 .c3 .c4 {
+    position: relative; top: 30px;
+}

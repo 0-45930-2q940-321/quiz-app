@@ -1,0 +1,27 @@
+
+body {
+    background: black;
+}
+
+.landing-page {
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    border: 1px #fff solid;
+    border-radius: 50px;
+}
+
+.highscore-btn {
+    position: relative; top: 50px;
+}
