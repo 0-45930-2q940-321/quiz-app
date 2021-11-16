@@ -2,7 +2,7 @@ const questionEl = document.getElementById('question')
 
 const answers = document.getElementById('allchoices')
 
-const choiceText = document.querySelector('.choice-text')
+const choiceText = document.querySelectorAll('.choice-text')
 
 const scoreText = document.getElementById('score')
 
@@ -10,6 +10,8 @@ const choiceOne = document.querySelector('.c1')
 const choiceTwo = document.querySelector('.c2')
 const choiceThree = document.querySelector('.c3')
 const choiceFour = document.querySelector('.c4')
+
+let highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
 const questionObj = [
     {
@@ -58,12 +60,11 @@ let activeQuestion;
 
 let i = 0;
 
-let score = 100;
+let score = 0;
 
 function startQuiz() {
     score = 0;
     getNextQuestion();
-    checkAnswers();
 }
 
 
@@ -74,7 +75,8 @@ function getNextQuestion() {
     //If the question is greater than questionObj length, it will tally the score go to the highscore page
     if (i > questionObj.length - 1) {
         localStorage.setItem('mostRecentScore', score)
-
+        highScores.push(score)
+        localStorage.setItem('highScores', JSON.stringify(highScores))
         window.location.assign('./data.html')
         return false;
     }
@@ -96,20 +98,21 @@ function getNextQuestion() {
     i++
 }
 
-function checkAnswers() {
     // 'C' knows what were clicking on so we just have to get the attribute, attribute being 'data-check' and look at the value. If the value is true, it is correct and will add score
-    choiceText.addEventListener('click', (c) => {
-        if (c.target.getAttribute('data-check')) {
-            //The score will add 100 when its correct and added to the innerText of 'score'
-            score += 100;
-            scoreText.innerText = score;
-        } else {
-            console.log(wrong);
-        }
-        getNextQuestion();
+    choiceText.forEach(choice => {
+        choice.addEventListener('click', (c) => {
+            console.log(c.target.getAttribute('data-check'));
+            if (c.target.getAttribute('data-check') == 'true') {
+                //The score will add 100 when its correct and added to the innerText of 'score'
+                score += 100;
+                scoreText.innerText = score;
+            } else {
+                console.log('wrong');
+            }
+            getNextQuestion();
+        })
     })
 
-}
 
 
 startQuiz();
