@@ -6,10 +6,13 @@ const choiceText = document.querySelectorAll('.choice-text')
 
 const scoreText = document.getElementById('score')
 
+const countDown = document.getElementById('timer')
+
 const choiceOne = document.querySelector('.c1')
 const choiceTwo = document.querySelector('.c2')
 const choiceThree = document.querySelector('.c3')
 const choiceFour = document.querySelector('.c4')
+
 
 let highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
@@ -60,11 +63,13 @@ let activeQuestion;
 
 let i = 0;
 
-let score = 0;
+let score;
 
 function startQuiz() {
     score = 0;
     getNextQuestion();
+    checkAnswers();
+    //startTime();
 }
 
 
@@ -98,6 +103,7 @@ function getNextQuestion() {
     i++
 }
 
+function checkAnswers() {
     // 'C' knows what were clicking on so we just have to get the attribute, attribute being 'data-check' and look at the value. If the value is true, it is correct and will add score
     choiceText.forEach(choice => {
         choice.addEventListener('click', (c) => {
@@ -112,6 +118,21 @@ function getNextQuestion() {
             getNextQuestion();
         })
     })
+}
+
+function startTime() {
+    let sec = 30;
+
+    setInterval(function() {
+        countDown.innerHTML = --sec;
+        if (sec === 0) {
+            window.location.assign('../../index.html')
+        }
+    
+    }, 1000);
+}
+
+
 
 
 

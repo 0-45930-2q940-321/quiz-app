@@ -1,11 +1,9 @@
-
 body {
-    background: black;
+    background-color: black;
 }
 
 .landing-page {
     font-size: 50px;
-    color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -13,15 +11,46 @@ body {
 }
 
 a {
+    color: #fff;
     display: flex;
     justify-content: center;
-    color: #fff;
     text-decoration: none;
     padding: 12px;
-    border: 1px #fff solid;
+    border: 3px #fff solid;
     border-radius: 50px;
 }
 
 .highscore-btn {
-    position: relative; top: 50px;
+    position: relative;
+    top: 50px;
+}
+
+h1 {
+    display: flex;
+    position: relative; bottom: 50px;
+}
+
+.letter {
+    font-size: 120px;
+    animation: fade 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+    transition: ease-in-out;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #000f);
+}
+
+@keyframes fade {
+    0% {
+        color: #fff;
+        filter: hue-rotate(0deg);
+        text-shadow: 0 0 10px #00ff73, 0 0 20px #00ccff, 0 0 40px #0084ff, 0 0 80px #ae00ff, 0 0 120px #ff0077, 0 0 200px #ff0040, 0 0 300px #ff7b00, 0 0 400px #bbff00;
+    }
+    30%, 70% {
+        color: #fff;
+        filter: hue-rotate(360deg);
+    }
+    100% {
+        color: #fff;
+        box-shadow: none;
+        filter: hue-rotate(360deg);
+    }
 }
