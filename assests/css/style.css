@@ -2,6 +2,15 @@ body {
     background-color: black;
 }
 
+h1 {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50px;
+    position: relative;
+}
+
 .landing-page {
     font-size: 50px;
     position: absolute;
@@ -20,14 +29,15 @@ a {
     border-radius: 50px;
 }
 
-.highscore-btn {
-    position: relative;
-    top: 50px;
+a:hover {
+    color: black;
+    background: #fff;
+    animation: pulse 1s linear infinite;
+    transition: ease-in-out;
 }
 
-h1 {
-    display: flex;
-    position: relative; bottom: 50px;
+.highscore-btn {
+    position: relative; top: 100px;
 }
 
 .letter {
@@ -35,22 +45,36 @@ h1 {
     animation: fade 1s linear infinite;
     animation-delay: calc(0.1s * var(--i));
     transition: ease-in-out;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #000f);
 }
 
 @keyframes fade {
     0% {
-        color: #fff;
+        color: rgb(209, 209, 209);
         filter: hue-rotate(0deg);
         text-shadow: 0 0 10px #00ff73, 0 0 20px #00ccff, 0 0 40px #0084ff, 0 0 80px #ae00ff, 0 0 120px #ff0077, 0 0 200px #ff0040, 0 0 300px #ff7b00, 0 0 400px #bbff00;
     }
     30%, 70% {
-        color: #fff;
+        color: rgb(245, 245, 245);
         filter: hue-rotate(360deg);
     }
     100% {
         color: #fff;
         box-shadow: none;
         filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.5)
+    }
+    80% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0  rgba(255, 255, 255, 0);
     }
 }

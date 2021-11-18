@@ -1,18 +1,14 @@
 const questionEl = document.getElementById('question')
-
 const answers = document.getElementById('allchoices')
-
 const choiceText = document.querySelectorAll('.choice-text')
-
 const scoreText = document.getElementById('score')
-
 const countDown = document.getElementById('timer')
+const button = document.querySelectorAll('.choices-abcd')
 
 const choiceOne = document.querySelector('.c1')
 const choiceTwo = document.querySelector('.c2')
 const choiceThree = document.querySelector('.c3')
 const choiceFour = document.querySelector('.c4')
-
 
 let highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
@@ -72,8 +68,6 @@ function startQuiz() {
     //startTime();
 }
 
-
-
 function getNextQuestion() {
     //inOrderQuestion will equal to current questionObj
     inOrderQuestion = questionObj[i]
@@ -120,6 +114,7 @@ function checkAnswers() {
     })
 }
 
+//This will start the timer that will count down to 30. When the timer is done it will make you lose so you can't enter your score.
 function startTime() {
     let sec = 30;
 
@@ -132,8 +127,13 @@ function startTime() {
     }, 1000);
 }
 
-
-
-
-
+function buttonRipple() {
+    button.onmousemove - function(e) {
+        const x = e.pageX - button.offsetLeft;
+        const y = e.pageY - button.offsetTop;
+        button.style.setProperty('--x', x + 'px');
+        button.style.setProperty('--y', y + 'px');
+    }
+}
+buttonRipple();
 startQuiz();
