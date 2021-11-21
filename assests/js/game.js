@@ -3,7 +3,6 @@ const answers = document.getElementById('allchoices')
 const choiceText = document.querySelectorAll('.choice-text')
 const scoreText = document.getElementById('score')
 const countDown = document.getElementById('timer')
-const button = document.querySelectorAll('.choices-abcd')
 
 const choiceOne = document.querySelector('.c1')
 const choiceTwo = document.querySelector('.c2')
@@ -127,13 +126,4 @@ function startTime() {
     }, 1000);
 }
 
-function buttonRipple() {
-    button.onmousemove - function(e) {
-        const x = e.pageX - button.offsetLeft;
-        const y = e.pageY - button.offsetTop;
-        button.style.setProperty('--x', x + 'px');
-        button.style.setProperty('--y', y + 'px');
-    }
-}
-buttonRipple();
 startQuiz();
