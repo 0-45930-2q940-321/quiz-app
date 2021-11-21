@@ -2,6 +2,7 @@ const questionEl = document.getElementById('question')
 const answers = document.getElementById('allchoices')
 const choiceText = document.querySelectorAll('.choice-text')
 const scoreText = document.getElementById('score')
+const addScore = document.getElementById('add-score')
 const countDown = document.getElementById('timer')
 
 const choiceOne = document.querySelector('.c1')
@@ -15,7 +16,7 @@ const questionObj = [
     {
         prompt: 'What is 2 + 2',
         answers: [
-            {text: '4', correct: true},
+            {text: 'What happens if i do this', correct: true},
             {text: '11', correct: false},
             {text: '10', correct: false},
             {text: '0', correct: false}
@@ -96,19 +97,57 @@ function getNextQuestion() {
     i++
 }
 
+function hoverSound(sound) {
+    const choiceSound = document.getElementById(sound)
+    choiceSound.play();
+}
+
+
 function checkAnswers() {
+
+    let correctSound = new Audio('../sounds/Correct.mp3');
+    let wrongSound = new Audio('../sounds/Incorrect.mp3');
+
+    
     // 'C' knows what were clicking on so we just have to get the attribute, attribute being 'data-check' and look at the value. If the value is true, it is correct and will add score
     choiceText.forEach(choice => {
         choice.addEventListener('click', (c) => {
-            console.log(c.target.getAttribute('data-check'));
+
             if (c.target.getAttribute('data-check') == 'true') {
                 //The score will add 100 when its correct and added to the innerText of 'score'
                 score += 100;
-                scoreText.innerText = score;
+
+                c.target.setAttribute('style', 'background-color:chartreuse', 'color:black')
+
+                addScore.classList.remove('hide-adding-score')
+
+                addScore.classList.add('score-up')
+                //Creating an animation for when you get it correct
+
+                correctSound.play();
+                
             } else {
+                c.target.setAttribute('style', 'background-color:red', 'color:black')
+
+                wrongSound.play();
+
                 console.log('wrong');
             }
-            getNextQuestion();
+
+            setTimeout(() => {
+
+                addScore.classList.add('hide-adding-score')
+
+                addScore.classList.remove('score-up')
+
+                //Making the score just display its score
+                scoreText.innerText= score;
+
+                c.target.setAttribute('style', 'background-color:black', 'color:white')
+
+                getNextQuestion();
+
+            }, 1000);
         })
     })
 }

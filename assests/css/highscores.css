@@ -6,3 +6,35 @@
 .highscore-page {
     color: #fff;
 }
+
+ul {
+    display: flex;
+    flex-direction: column;
+    
+    z-index: -5;
+    overflow: hidden;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    position: relative;
+    color: #fff;
+    border: 1px solid white;
+
+}
+
+.letter {
+    font-size: 120px;
+    animation: fade 1s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+    transition: ease-in-out;
+}
+
+.btn {
+    position: absolute; top: 100px;
+    
+}
