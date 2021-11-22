@@ -1,35 +1,38 @@
 const username = document.querySelector('#username')
+const form = document.querySelector('.end-form')
 const saveScoreBtn = document.querySelector('#saveScoreBtn')
 const finalScore = document.querySelector('#finalscore')
-const mostRecentScore = localStorage.getItem('#mostRecentScore')
+const mostRecentScore = localStorage.getItem('mostRecentScore')
 
 const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+console.log(highScores);
 
 const MAX_HIGH_SCORES = 5
 
-finalScore.innerText = `Final Score: ${localStorage.getItem('mostRecentScore')}` || 0
+//This will show 'Final Score: (number)' 
+finalScore.innerText = `Final Score: ${mostRecentScore}` || 0
 
-username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value
-})
-
+function saveHighScore() {
     
-    saveHighScore = h => {
-        h.preventDefault()
+    form.addEventListener('submit', () => {
+        localStorage.setItem(username)
 
-        const score = {
-            score: mostRecentScore,
-            name: username.value
+        if(!username) {
+            username = 'Anonymous';
+            localStorage.setItem(username)
         }
+    })
 
-        highScores.push(score)
-
-        highScores.sort((a,b) => {
-            return b.scoreObj - a.scoreObj
-        })
-
-        highScores.splice(5)
-
-        localStorage.setItem('highScores', JSON.stringify(highScores))
-        window.location.assign('./js/highscore.js')
+    if (highScores.length >= MAX_HIGH_SCORES) {
+        highScores.pop()
+        highScores.unshift(mostRecentScore)
     }
+    else {
+        highScores.unshift(mostRecentScore)
+    }
+    console.log(highScores);
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+}
+
+saveHighScore();

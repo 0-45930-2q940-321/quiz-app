@@ -75,7 +75,7 @@ function getNextQuestion() {
     if (i > questionObj.length - 1) {
         localStorage.setItem('mostRecentScore', score)
         highScores.push(score)
-        localStorage.setItem('highScores', JSON.stringify(highScores))
+        
         window.location.assign('./data.html')
         return false;
     }

@@ -1,14 +1,13 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="../css/game.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Quiz</title>
 </head>
-
 <body>
     <h1 id="timer">30</h1>
     <div class="score-hud">
@@ -17,13 +16,12 @@
         <h2 id="add-score" class="hide-adding-score score-up">+100</h2>
     </div>
     <audio controls autoplay loop src="/assests/sounds/Infected Mushroom - Guitarmass [Monstercat Release].mp3"></audio>
-    <audio id="player" src="vincent.mp3"></audio>
     
     <div class="background"></div>
     <div class="game-page">
         <div id="game" class="">
             <h2 id="question" class="question-style">What is the question?</h2>
-                <audio id="hoverSFX" src="/assests/sounds/Hover.mp3"></audio>
+                <audio id="hoverSFX" class="game-music" src="/assests/sounds/Hover.mp3"></audio>
                 <div onmouseover="hoverSound('hoverSFX')" class="choices-abcd a1">
                     <p class="choice-letter">A</p>
                     <p class="choice-text c1" data-check="">Option</p>
@@ -44,5 +42,4 @@
     </div>
     <script src="../js/game.js"></script>
 </body>
-
 </html>
