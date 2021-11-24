@@ -16,37 +16,37 @@ const questionObj = [
     {
         prompt: 'What is 2 + 2',
         answers: [
-            {text: 'What happens if i do this', correct: true},
-            {text: '11', correct: false},
-            {text: '10', correct: false},
-            {text: '0', correct: false}
+            { text: 'What happens if i do this', correct: true },
+            { text: '11', correct: false },
+            { text: '10', correct: false },
+            { text: '0', correct: false }
         ]
     },
     {
         prompt: 'Why is 5 + 5',
         answers: [
-            {text: '4', correct: true},
-            {text: '11', correct: false},
-            {text: '10', correct: false},
-            {text: '0', correct: false}
+            { text: '4', correct: true },
+            { text: '11', correct: false },
+            { text: '10', correct: false },
+            { text: '0', correct: false }
         ]
     },
     {
         prompt: 'Who is 2 + 2',
         answers: [
-            {text: '4', correct: true},
-            {text: '11', correct: false},
-            {text: '10', correct: false},
-            {text: '0', correct: false}
+            { text: '4', correct: true },
+            { text: '11', correct: false },
+            { text: '10', correct: false },
+            { text: '0', correct: false }
         ]
     },
     {
         prompt: 'When is 2 + 2',
         answers: [
-            {text: '4', correct: true},
-            {text: '11', correct: false},
-            {text: '10', correct: false},
-            {text: '0', correct: false}
+            { text: '4', correct: true },
+            { text: '11', correct: false },
+            { text: '10', correct: false },
+            { text: '0', correct: false }
         ]
     }
 ]
@@ -65,34 +65,34 @@ function startQuiz() {
     score = 0;
     getNextQuestion();
     checkAnswers();
-    //startTime();
+    startTime();
 }
 
 function getNextQuestion() {
     //inOrderQuestion will equal to current questionObj
     inOrderQuestion = questionObj[i]
-    //If the question is greater than questionObj length, it will tally the score go to the highscore page
+    //If the question is greater than questionObj length, it will tally the score to the highscore page
     if (i > questionObj.length - 1) {
         localStorage.setItem('mostRecentScore', score)
         highScores.push(score)
-        
-        window.location.assign('./data.html')
+
+        window.location.assign('../pages/data.html')
         return false;
     }
     //innerText of 'question' will be the CURRENT prompt 
     questionEl.innerText = questionObj[i].prompt
 
     choiceOne.innerText = questionObj[i].answers[0].text;
-    choiceOne.setAttribute('data-check',questionObj[i].answers[0].correct);
+    choiceOne.setAttribute('data-check', questionObj[i].answers[0].correct);
 
     choiceTwo.innerText = questionObj[i].answers[1].text;
-    choiceTwo.setAttribute('data-check',questionObj[i].answers[1].correct);
+    choiceTwo.setAttribute('data-check', questionObj[i].answers[1].correct);
 
     choiceThree.innerText = questionObj[i].answers[2].text;
-    choiceThree.setAttribute('data-check',questionObj[i].answers[2].correct);
+    choiceThree.setAttribute('data-check', questionObj[i].answers[2].correct);
 
     choiceFour.innerText = questionObj[i].answers[3].text;
-    choiceFour.setAttribute('data-check',questionObj[i].answers[3].correct);
+    choiceFour.setAttribute('data-check', questionObj[i].answers[3].correct);
 
     i++
 }
@@ -102,13 +102,12 @@ function hoverSound(sound) {
     choiceSound.play();
 }
 
-
 function checkAnswers() {
 
-    let correctSound = new Audio('../sounds/Correct.mp3');
-    let wrongSound = new Audio('../sounds/Incorrect.mp3');
+    const correctSound = new Audio('../sounds/Correct.mp3');
+    const wrongSound = new Audio('../sounds/Incorrect.mp3');
 
-    
+
     // 'C' knows what were clicking on so we just have to get the attribute, attribute being 'data-check' and look at the value. If the value is true, it is correct and will add score
     choiceText.forEach(choice => {
         choice.addEventListener('click', (c) => {
@@ -125,7 +124,7 @@ function checkAnswers() {
                 //Creating an animation for when you get it correct
 
                 correctSound.play();
-                
+
             } else {
                 c.target.setAttribute('style', 'background-color:red', 'color:black')
 
@@ -141,7 +140,7 @@ function checkAnswers() {
                 addScore.classList.remove('score-up')
 
                 //Making the score just display its score
-                scoreText.innerText= score;
+                scoreText.innerText = score;
 
                 c.target.setAttribute('style', 'background-color:black', 'color:white')
 
@@ -156,12 +155,21 @@ function checkAnswers() {
 function startTime() {
     let sec = 30;
 
-    setInterval(function() {
+    let gameOver = new Audio('../sounds/Game-Over.mp3')
+
+    setInterval(function () {
+
         countDown.innerHTML = --sec;
+
         if (sec === 0) {
             window.location.assign('../../index.html')
+            gameOver.play();
         }
-    
+
+        if (sec < 6) {
+            countDown.setAttribute('style', 'color:red')
+        }
+
     }, 1000);
 }
 

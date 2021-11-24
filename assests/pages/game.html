@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>Quiz</title>
 </head>
+
 <body>
     <h1 id="timer">30</h1>
     <div class="score-hud">
@@ -15,31 +17,48 @@
         <h2 class="score-total" id="score">0</h2>
         <h2 id="add-score" class="hide-adding-score score-up">+100</h2>
     </div>
-    <audio controls autoplay loop src="/assests/sounds/Infected Mushroom - Guitarmass [Monstercat Release].mp3"></audio>
-    
+    <audio controls autoplay loop src="/assests/sounds/Game-Music.mp3"></audio>
+    <section class="slow-orbs">
+        <div>
+            <span style="--orb:1"></span>
+            <span style="--orb:2"></span>
+            <span style="--orb:3"></span>
+            <span style="--orb:4"></span>
+            <span style="--orb:5"></span>
+            <span style="--orb:6"></span>
+            <span style="--orb:7"></span>
+            <span style="--orb:8"></span>
+            <span style="--orb:9"></span>
+        </div>
+    </section>
     <div class="background"></div>
-    <div class="game-page">
-        <div id="game" class="">
-            <h2 id="question" class="question-style">What is the question?</h2>
+    <!-- Start of the functioning Game -->
+    <section>
+        <div class="game-page">
+            <div id="game" class="">
+                <h2 id="question" class="question-style">What is the question?</h2>
                 <audio id="hoverSFX" class="game-music" src="/assests/sounds/Hover.mp3"></audio>
-                <div onmouseover="hoverSound('hoverSFX')" class="choices-abcd a1">
+                <div class="choices-abcd a1">
                     <p class="choice-letter">A</p>
-                    <p class="choice-text c1" data-check="">Option</p>
+                    <p onmouseover="hoverSound('hoverSFX')" class="choice-text c1" data-check="">Option</p>
                 </div>
-                <div onmouseover="hoverSound('hoverSFX')" class="choices-abcd b2">
+                <div class="choices-abcd b2">
                     <p class="choice-letter">B</p>
-                    <p class="choice-text c2" data-check="">Option 2</p>
+                    <p onmouseover="hoverSound('hoverSFX')" class="choice-text c2" data-check="">Option 2</p>
                 </div>
-                <div onmouseover="hoverSound('hoverSFX')" class="choices-abcd c33">
+                <div class="choices-abcd c33">
                     <p class="choice-letter">C</p>
-                    <p class="choice-text c3" data-check="">Option 3</p>
+                    <p onmouseover="hoverSound('hoverSFX')" class="choice-text c3" data-check="">Option 3</p>
                 </div>
-                <div onmouseover="hoverSound('hoverSFX')" class="choices-abcd d4">
+                <div class="choices-abcd d4">
                     <p class="choice-letter">D</p>
-                    <p class="choice-text c4" data-check="">Option 4</p>
+                    <p onmouseover="hoverSound('hoverSFX')" class="choice-text c4" data-check="">Option 4</p>
                 </div>
             </div>
-    </div>
+        </div>
+    </section>
+    <!-- End of functioning Game -->
     <script src="../js/game.js"></script>
 </body>
+
 </html>

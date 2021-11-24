@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,25 +9,46 @@
     <link rel="stylesheet" href="../css/highscores.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="highscore-page">
-        <div id="highScores" class="">
-            <h1 id="finalScore"><p class="letter" style="--i:1;">L</p>
-                <p class="letter" style="--i:2;">E</p>
-                <p class="letter" style="--i:3;">A</p>
-                <p class="letter" style="--i:4;">D</p>
-                <p class="letter" style="--i:5;;">E</p>
-                <p class="letter" style="--i:6;"">R</p>
-                <p class="letter" style="--i:7;">B</p>
-                <p class="letter" style="--i:8;">O</p>
-                <p class="letter" style="--i:9;">A</p>
-                <p class="letter" style="--i:10;">R</p>
-                <p class="letter" style="--i:11;">D</p>
-                </h1>
+    <section class="highscore-Orbs">
+        <div>
+            <span style="--orb:1"></span>
+            <span style="--orb:2"></span>
+            <span style="--orb:3"></span>
+            <span style="--orb:4"></span>
+            <span style="--orb:5"></span>
+            <span style="--orb:6"></span>
+            <span style="--orb:7"></span>
+            <span style="--orb:8"></span>
+            <span style="--orb:9"></span>
+        </div>
+    </section>
+    <audio controls autoplay loop src="/assests/sounds/Highscore.mp3"></audio>
+    <section class="highscore-page">
+        <section id="leaderBoard">
+            <h1>
+                <p class="letter" style="--ldrBrdSqnce:1;">L</p>
+                <p class="letter" style="--ldrBrdSqnce:2;">E</p>
+                <p class="letter" style="--ldrBrdSqnce:3;">A</p>
+                <p class="letter" style="--ldrBrdSqnce:4;">D</p>
+                <p class="letter" style="--ldrBrdSqnce:5;">E</p>
+                <p class="letter" style="--ldrBrdSqnce:6;">R</p>
+                <p class="letter" style="--ldrBrdSqnce:7;">B</p>
+                <p class="letter" style="--ldrBrdSqnce:8;">O</p>
+                <p class="letter" style="--ldrBrdSqnce:9;">A</p>
+                <p class="letter" style="--ldrBrdSqnce:10;">R</p>
+                <p class="letter" style="--ldrBrdSqnce:11;">D</p>
+            </h1>
+            <!-- Start of Highscore List Generation -->
+        </section id="highScores">
+        <div>
             <ul class="" id="highScoresList"></ul>
             <a href="../../index.html" class="btn">Go Home</a>
         </div>
-    </div>
+    </section>
+    <!-- End of Highscore List Generation -->
     <script src="../js/highscore.js"></script>
 </body>
+
 </html>

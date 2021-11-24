@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,34 @@
     <link rel="stylesheet" href="./assests/css/style.css">
     <title>Start Quiz</title>
 </head>
+
 <body>
-    <h1>Ready to Play?</h1>
-    <div class="orbs">
-        <span style="--i:1"></span>
-        <span style="--i:2"></span>
-        <span style="--i:3"></span>
-        <span style="--i:4"></span>
-        <span style="--i:5"></span>
-        <span style="--i:6"></span>
-        <span style="--i:7"></span>
-        <span style="--i:8"></span>
-        <span style="--i:9"></span>
-    </div>
-    <div class="landing-page">
-        <a class="btn play-btn" href="./assests/pages/game.html">Play</a>
-        <a class="btn highscore-btn" href="./assests/pages/highscore.html">Highscore</a>
-        <audio controls autoplay loop src="/assests/sounds/Opening-Song.mp3"></audio>
-    </div>
+
+    <section class="home-orbs-position">
+        <div class="orbs">
+            <span style="--orb:1"></span>
+            <span style="--orb:2"></span>
+            <span style="--orb:3"></span>
+            <span style="--orb:4"></span>
+            <span style="--orb:5"></span>
+            <span style="--orb:6"></span>
+            <span style="--orb:7"></span>
+            <span style="--orb:8"></span>
+            <span style="--orb:9"></span>
+        </div>
+    </section>
+    
+    <!-- Start of functioning Home -->
+    <section class="landing-page">
+        <h1 class="bumpBass">Ready to Play?</h1>
+        <div>
+            <a class="btn play-btn" href="./assests/pages/game.html">Play</a>
+            <a class="btn highscore-btn" href="./assests/pages/highscore.html">Highscore</a>
+            <audio class="player" controls autoplay loop src="/assests/sounds/Opening-Song.mp3"></audio>
+        </div>
+    </section>
+    <!-- End of functioning Home -->
     <script src="/assests/js/main.js"></script>
 </body>
+
 </html>

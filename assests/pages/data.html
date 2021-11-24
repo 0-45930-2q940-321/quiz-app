@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,52 @@
     <link rel="stylesheet" href="../css/data.css">
     <title>Submit Highscore</title>
 </head>
+
 <body>
-    <div class="end-page">
-        <div id="end" class="">
-            <h1 id="finalScore">0</h1>
-            <form action="" class="end-form">
-                <h2 id="end-text">Enter your name</h2>
-                <input type="text" name="name" id="username" placeholder="Enter your name">
-                <button class="btn" id="saveScorebtn" type="submit" onclick="saveHighscore(event)">Save</button>
-            </form>
-            <a href="./game.html" class="btn">Play again</a>
-            <a href="../../index.html" class="btn">Go home</a>
+    <!-- Start of Score Submission -->
+    <section class="end-page">
+        <div>
+            <!-- Star Score HUD -->
+            <div id="end" class="">
+                <h1 id="finalScore">0</h1>
+                <!-- End Score HUD -->
+
+                <!-- Start Form -->
+                <main>
+                    <form action="" class="end-form">
+                        <h2 id="end-text">Enter your name, then press 'Go Home' or 'Play Again'.</h2>
+                        <input type="text" name="name" id="username" placeholder="Enter your name">
+                    </form>
+                </main>
+                <!-- End Form -->
+
+                <!-- Start of Buttons -->
+                <div class="buttons">
+                    <a href="./game.html" class="btn save-high-score">Play again</a>
+                    <a href="../../index.html" class="btn save-high-score">Go home</a>
+                </div>
+                <!-- End of Buttons -->
+            </div>
         </div>
-    </div>
+    </section>
+    <!-- End of Score Submission -->
+
+    <!-- Start of Orbs -->
+    <section>
+        <div class="end-Orbs">
+            <span style="--orb:1"></span>
+            <span style="--orb:2"></span>
+            <span style="--orb:3"></span>
+            <span style="--orb:4"></span>
+            <span style="--orb:5"></span>
+            <span style="--orb:6"></span>
+            <span style="--orb:7"></span>
+            <span style="--orb:8"></span>
+            <span style="--orb:9"></span>
+        </div>
+    </section>
+    <audio controls autoplay loop src="/assests/sounds/Finish.mp3"></audio>
     <script src="../js/data.js"></script>
 </body>
+
 </html>

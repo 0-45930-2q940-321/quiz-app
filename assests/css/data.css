@@ -4,5 +4,239 @@
 }
 
 .end-page {
+    display: flex;
+    justify-content: center;
     color: #fff;
+}
+
+h1 {
+    animation: none;
+}
+
+form {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    bottom: 10%;
+    left: 23%;
+    font-size: 20px;
+    border: 1px solid white;
+    box-shadow: 0 0 20px white;
+    width: 400px;
+    flex-wrap: wrap;
+}
+
+input {
+    height: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color: white;
+    border: black;
+    border-radius: 20px;
+}
+
+
+.buttons {
+    position: relative;
+    left: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    right: 7%;
+    text-align: center;
+    font-size: 40px;
+    width: 300px;
+}
+
+audio {
+    position: relative;
+    left: 44%;
+    top: 15%;
+}
+
+.end-Orbs {
+    display: flex;
+    position: absolute;
+    top: -200px;
+    z-index: -5;
+    animation: end-Orbs 1s linear infinite;
+}
+
+.end-Orbs span {
+    display: flex;
+    position: absolute;
+    left: calc(200px * var(--orb));
+    right: calc(200px * var(--orb));
+}
+
+.end-Orbs span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 40%;
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+.end-Orbs span:nth-child(9n + 1) {
+    animation: bounce 5s linear infinite alternate;
+    animation-delay: 5s;
+}
+
+.end-Orbs span:nth-child(9n + 1)::before {
+    background: #00d5ff;
+    box-shadow: 0 0 20px rgba(var(--bright-blue), 1),
+        0 0 40px rgba(var(--bright-blue), 1),
+        0 0 60px rgba(var(--bright-blue), 1),
+        0 0 80px rgba(var(--bright-blue), 1),
+        0 0 0 8px rgba(var(--bright-blue), .1);
+}
+
+.end-Orbs span:nth-child(9n + 2) {
+    animation: bounce2 6.5s linear infinite alternate;
+    animation-delay: 4s;
+}
+
+.end-Orbs span:nth-child(9n + 2)::before {
+    background: #aeff00;
+    box-shadow: 0 0 20px rgba(var(--yellow-green), 1),
+        0 0 40px rgba(var(--yellow-green), 1),
+        0 0 60px rgba(var(--yellow-green), 1),
+        0 0 80px rgba(var(--yellow-green), 1),
+        0 0 0 8px rgba(var(--yellow-green), .1);
+}
+
+.end-Orbs span:nth-child(9n + 3) {
+    animation: bounce3 6s linear infinite alternate;
+    animation-delay: 3s;
+}
+
+.end-Orbs span:nth-child(9n + 3)::before {
+    background: #00ff55;
+    box-shadow: 0 0 20px rgba(var(--green-blue), 1),
+        0 0 40px rgba(var(--green-blue), 1),
+        0 0 60px rgba(var(--green-blue), 1),
+        0 0 80px rgba(var(--green-blue), 1),
+        0 0 0 8px rgba(var(--green-blue), .1);
+}
+
+.end-Orbs span:nth-child(9n + 4) {
+    animation: bounce4 7.5s linear infinite alternate;
+    animation-delay: 2s;
+}
+
+.end-Orbs span:nth-child(9n + 4)::before {
+    background: #d6fff8;
+    box-shadow: 0 0 20px rgba(var(--ice-white), 1),
+        0 0 40px rgba(var(--ice-white), 1),
+        0 0 60px rgba(var(--ice-white), 1),
+        0 0 80px rgba(var(--ice-white), 1),
+        0 0 0 8px rgba(var(--ice-white), .1);
+}
+
+.end-Orbs span:nth-child(9n + 5) {
+    animation: bounce5 7s linear infinite alternate;
+    animation-delay: 1s;
+}
+
+.end-Orbs span:nth-child(9n + 5)::before {
+    background: #ff00e6;
+    box-shadow: 0 0 20px rgba(var(--bright-pink), 1),
+        0 0 40px rgba(var(--bright-pink), 1),
+        0 0 60px rgba(var(--bright-pink), 1),
+        0 0 80px rgba(var(--bright-pink), 1),
+        0 0 0 8px rgba(var(--bright-pink), .1);
+}
+
+.end-Orbs span:nth-child(9n + 6) {
+    animation: bounce6 8.5s linear infinite alternate;
+    animation-delay: 2s;
+}
+
+.end-Orbs span:nth-child(9n + 6)::before {
+    background: #ff6600;
+    box-shadow: 0 0 20px rgba(var(--orange-sun), 1),
+        0 0 40px rgba(var(--orange-sun), 1),
+        0 0 60px rgba(var(--orange-sun), 1),
+        0 0 80px rgba(var(--orange-sun), 1),
+        0 0 0 8px rgba(var(--orange-sun), .1);
+}
+
+.end-Orbs span:nth-child(9n + 7) {
+    animation: bounce7 8s linear infinite alternate;
+    animation-delay: 3s;
+}
+
+.end-Orbs span:nth-child(9n + 7)::before {
+    background: #0026ff;
+    box-shadow: 0 0 20px rgba(var(--dark-sky), 1),
+        0 0 40px rgba(var(--dark-sky), 1),
+        0 0 60px rgba(var(--dark-sky), 1),
+        0 0 80px rgba(var(--dark-sky), 1),
+        0 0 0 8px rgba(var(--dark-sky), .1);
+}
+
+.end-Orbs span:nth-child(9n + 8) {
+    animation: bounce8 9.5s linear infinite alternate;
+    animation-delay: 4s;
+}
+
+.end-Orbs span:nth-child(9n + 8)::before {
+    background: #d900ff;
+    box-shadow: 0 0 20px rgba(var(--elixir-purple), 1),
+        0 0 40px rgba(var(--elixir-purple), 1),
+        0 0 60px rgba(var(--elixir-purple), 1),
+        0 0 80px rgba(var(--elixir-purple), 1),
+        0 0 0 8px rgba(var(--elixir-purple), .1);
+}
+
+.end-Orbs span:nth-child(9n + 9) {
+    animation: bounce9 9s linear infinite alternate;
+    animation-delay: 5s;
+}
+
+.end-Orbs span:nth-child(9n + 9)::before {
+    background: #ff2200;
+    box-shadow: 0 0 20px rgba(var(--lava-red), 1),
+        0 0 40px rgba(var(--lava-red), 1),
+        0 0 60px rgba(var(--lava-red), 1),
+        0 0 80px rgba(var(--lava-red), 1),
+        0 0 0 8px rgba(var(--lava-red), .1);
+}
+
+
+@keyframes end-Orbs {
+    0% {
+        filter: hue-rotate(0deg);
+        opacity: .5;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+
+        opacity: .2;
+    }
+
+    75% {
+
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+        filter: hue-rotate(360deg);
+    }
 }
