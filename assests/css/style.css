@@ -35,7 +35,7 @@ h1 {
 .landing-page {
     font-size: 50px;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -75,6 +75,7 @@ a:hover {
     color: white;
     font-size: 50px;
     position: relative;
+    left: 160px;
     top: 380px;
 }
 
@@ -106,6 +107,8 @@ audio::-webkit-media-controls-time-remaining-display {
     position: relative;
     right: 50px;
     bottom: 25%;
+    animation: blinkOrb 2s linear;
+    animation-delay: 17.5s;
 }
 
 .orbs {
@@ -407,5 +410,23 @@ audio::-webkit-media-controls-time-remaining-display {
         filter: hue-rotate(360deg);
         transform: scale(1);
         transform: translateX(10px);
+    }
+}
+
+@keyframes blinkOrb {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
