@@ -116,7 +116,7 @@ function checkAnswers() {
 
 //This will start the timer that will count down to 30. When the timer is done it will make you lose so you can't enter your score.
 function startTime() {
-    let sec = 30;
+    let sec = 60;
 
     let gameOver = new Audio('../sounds/Game-Over.mp3')
 
