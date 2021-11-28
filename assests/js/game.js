@@ -26,6 +26,7 @@ function startQuiz() {
     score = 0;
     getNextQuestion();
     checkAnswers();
+    hoverSound();
     startTime();
 }
 
