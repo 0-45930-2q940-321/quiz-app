@@ -12,45 +12,6 @@ const choiceFour = document.querySelector('.c4')
 
 let highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
-const questionObj = [
-    {
-        prompt: 'What is 2 + 2',
-        answers: [
-            { text: 'What happens if i do this', correct: true },
-            { text: '11', correct: false },
-            { text: '10', correct: false },
-            { text: '0', correct: false }
-        ]
-    },
-    {
-        prompt: 'Why is 5 + 5',
-        answers: [
-            { text: '4', correct: true },
-            { text: '11', correct: false },
-            { text: '10', correct: false },
-            { text: '0', correct: false }
-        ]
-    },
-    {
-        prompt: 'Who is 2 + 2',
-        answers: [
-            { text: '4', correct: true },
-            { text: '11', correct: false },
-            { text: '10', correct: false },
-            { text: '0', correct: false }
-        ]
-    },
-    {
-        prompt: 'When is 2 + 2',
-        answers: [
-            { text: '4', correct: true },
-            { text: '11', correct: false },
-            { text: '10', correct: false },
-            { text: '0', correct: false }
-        ]
-    }
-]
-
 let inOrderQuestion;
 
 let questionIndex;
@@ -76,12 +37,13 @@ function getNextQuestion() {
         localStorage.setItem('mostRecentScore', score)
         highScores.push(score)
 
-        window.location.assign('../pages/data.html')
+        location.assign('../pages/data.html')
         return false;
     }
     //innerText of 'question' will be the CURRENT prompt 
     questionEl.innerText = questionObj[i].prompt
 
+    //Will get the questionObj index and get all the answers and boolean values of each and put them into their respective innerText 
     choiceOne.innerText = questionObj[i].answers[0].text;
     choiceOne.setAttribute('data-check', questionObj[i].answers[0].correct);
 
@@ -172,5 +134,98 @@ function startTime() {
 
     }, 1000);
 }
+
+const questionObj = [
+    {
+        prompt: 'What artists recorded two of their bestselling albums while they were behind bars?',
+        answers: [
+            { text: 'Tupac', correct: false },
+            { text: 'Ozzy Osbourne', correct: false },
+            { text: 'Johnny Cash', correct: true },
+            { text: '50 Cent', correct: false }
+        ]
+    },
+    {
+        prompt: 'Michael Jackson debuted his trademark moonwalk during which song in 1983?',
+        answers: [
+            { text: 'Smooth Criminal', correct: false },
+            { text: 'Billie Jean', correct: true },
+            { text: 'Beat It', correct: false },
+            { text: 'Thriller', correct: false }
+        ]
+    },
+    {
+        prompt: 'It took Mariah Carey 15 minutes to write which song in 1994?',
+        answers: [
+            { text: 'Without You', correct: false },
+            { text: 'Fantasy', correct: false },
+            { text: 'Emotions', correct: false },
+            { text: 'All I Want For Christmas Is You', correct: true }
+        ]
+    },
+    {
+        prompt: 'The most awarded female act of all time goes to… which 80s sensation?',
+        answers: [
+            { text: 'Cyndi Lauper', correct: false },
+            { text: 'Madonna', correct: false },
+            { text: 'Tina Turner', correct: false },
+            { text: 'Whitney Houston', correct: true }
+        ]
+    },
+    {
+        prompt: 'What was Madonna‘s first top 10 hit?',
+        answers: [
+            { text: 'Like a Prayer', correct: false },
+            { text: 'Ray of Light', correct: false },
+            { text: 'Holiday', correct: true },
+            { text: 'Hung Up', correct: false }
+        ]
+    },
+    {
+        prompt: 'Which DJ is known for throwing a cake at an audience member at every show?',
+        answers: [
+            { text: 'Calvin Harris', correct: false },
+            { text: 'David Guetta', correct: false },
+            { text: 'Steve Aoki', correct: true },
+            { text: 'Skrillex', correct: false }
+        ]
+    },
+    {
+        prompt: 'EDM grew in part as a revolt against which music trend?',
+        answers: [
+            { text: 'Pop', correct: false },
+            { text: 'Punk', correct: false },
+            { text: 'Disco', correct: true },
+            { text: 'Jazz', correct: false }
+        ]
+    },
+    {
+        prompt: 'Which 2000s artist sings: "What A Girl Wants"?',
+        answers: [
+            { text: 'Christina Aguilera', correct: false },
+            { text: 'Carrie Underwood', correct: false },
+            { text: 'Kelly Clarkson', correct: true },
+            { text: 'Avril Lavigne', correct: false }
+        ]
+    },
+    {
+        prompt: 'What U.S. city is considered the "Country Music Capital of the World"?',
+        answers: [
+            { text: 'Nashville', correct: true },
+            { text: 'Dallas', correct: false },
+            { text: 'Louisville', correct: false },
+            { text: 'Denver', correct: false }
+        ]
+    },
+    {
+        prompt: 'What was the name of the band Justin Timberlake started in?',
+        answers: [
+            { text: 'NSYNC', correct: true },
+            { text: 'Backstreet Boys', correct: false },
+            { text: '5ive', correct: false },
+            { text: '2Gether', correct: false }
+        ]
+    }
+]
 
 startQuiz();
