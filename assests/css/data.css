@@ -10,7 +10,7 @@
 }
 
 h1 {
-    animation: none;
+    animation: formBass 0.35s linear infinite;
 }
 
 form {
@@ -26,6 +26,7 @@ form {
     box-shadow: 0 0 20px white;
     width: 400px;
     flex-wrap: wrap;
+    animation: formBass 0.35s linear infinite;
 }
 
 input {
@@ -57,7 +58,7 @@ input {
 
 audio {
     position: relative;
-    left: 44%;
+    left: 43%;
     top: 15%;
 }
 
@@ -238,5 +239,28 @@ audio {
     100% {
         opacity: .5;
         filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes formBass {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1);
+
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+    75% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
