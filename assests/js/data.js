@@ -29,7 +29,7 @@ fallBackSaveScore.forEach((el) => {
 //The function 'saveHighScore' will have arguements of 'nameValue' and 'scoreValue'. 
 //Good practice to do so, so you can call it whenever you need to save a score with a name and score.
 function saveHighScore(nameValue, scoreValue) {
-    //Converting strings into an array and getting an array from 'localStorage'. However, if there if there is no array it will be assigned to an empty array
+    //Converting strings into an array and getting an array from 'localStorage'. However, if there is no array it will be assigned to an empty array
     const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
     const score = {
