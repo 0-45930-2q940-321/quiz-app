@@ -16,4 +16,6 @@
 #### The players name and score will show in the Highscore page.
 #### The Highscore page will only have at max 5 scores. If it exceeds the ammount it will pop the last score entered before shifting a players score in the highscore array.
 
+A cool animation will play if you wait a bit in Start/Home page!
+
 https://94r0372189547389.github.io/quiz-app/
